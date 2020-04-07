@@ -1,14 +1,14 @@
 package com.example.exercisemenu18a;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     EditText username, password;
@@ -33,12 +33,12 @@ public class MainActivity extends AppCompatActivity {
                     //jika login sukses
                     Toast.makeText(getApplicationContext(), "LOGIN SUKSES",
                             Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(MainActivity.this, activity2.class);
+                    Intent intent = new Intent(MainActivity.this, menuhitung.class);
                     MainActivity.this.startActivity(intent);
                 }else {
                     //jika login gagal
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                    builder.setMessage("Username atau Password anda")
+                    builder.setMessage("Username atau Password anda salah ")
                             .setNegativeButton("Retry",null).create().show();
                 }
             }
